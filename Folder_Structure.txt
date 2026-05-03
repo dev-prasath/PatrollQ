@@ -1,0 +1,39 @@
+PatrolIQ/
+│
+├── data/
+│   ├── raw/
+│   │   └── chicago_crime.csv
+│   │
+│   ├── processed/
+│   │   └── cleaned_data.csv
+│   │
+│   └── samples/
+│       └── sample_500k.csv
+├── src/
+│   ├── data_preprocessing.py
+│   ├── feature_engineering.py
+│   ├── clustering.py
+│   ├── dimensionality_reduction.py
+│
+├── models/
+│   ├── kmeans_model.pkl
+│   ├── dbscan_model.pkl
+│   └── pca_model.pkl
+│
+├── mlruns/                 # MLflow auto-generated
+│
+├── app/
+│   ├── main.py             # Streamlit entry point
+│   ├── pages/
+│   │   ├── hotspots.py
+│   │   ├── temporal_analysis.py
+│   │   ├── pca_visualization.py
+│   │   └── model_metrics.py
+│   │
+│   └── components/
+│       ├── charts.py
+│       └── maps.py
+│
+├── requirements.txt
+├── README.md
+└── .gitignore
