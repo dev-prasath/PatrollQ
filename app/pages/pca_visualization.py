@@ -6,7 +6,20 @@ from sklearn.decomposition import PCA
 
 st.title("📊 PCA Crime Pattern Visualization")
 
-df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
+# df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+file_path = (
+    BASE_DIR
+    / "datasets"
+    / "processed_datasets"
+    / "clustered_data.csv"
+)
+
+df = pd.read_csv(file_path)
+
 
 st.markdown("""
 ### 🧠 What is PCA?

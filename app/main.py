@@ -24,7 +24,19 @@ st.set_page_config(page_title="PatrolIQ", layout="wide")
 st.title("🚓 PatrolIQ - Smart Crime Intelligence Dashboard")
 
 # ---------------- LOAD DATA ---------------- #
-df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
+# df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
+from pathlib import Path
+
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+file_path = (
+    BASE_DIR
+    / "datasets"
+    / "processed_datasets"
+    / "clustered_data.csv"
+)
+
+df = pd.read_csv(file_path)
 
 # ---------------- KPIs ---------------- #
 st.subheader("📊 Overall Insights")
