@@ -2,10 +2,24 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
+from pathlib import Path
+
+
 
 st.title("📍 Crime Hotspot Explorer")
 
-df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
+# df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
+
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+file_path = (
+    BASE_DIR
+    / "datasets"
+    / "processed_datasets"
+    / "clustered_data.csv"
+)
+
+df = pd.read_csv(file_path)
 
 df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
 df["Hour"] = df["Date"].dt.hour
