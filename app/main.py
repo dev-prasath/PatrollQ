@@ -25,18 +25,14 @@ st.title("🚓 PatrolIQ - Smart Crime Intelligence Dashboard")
 
 # ---------------- LOAD DATA ---------------- #
 # df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
-from pathlib import Path
+# https://drive.google.com/file/d/1IoNg9sw-00GeFoTLIfYBEipR_X7Rdpt5/view?usp=sharing
+import pandas as pd
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+file_id = "1IoNg9sw-00GeFoTLIfYBEipR_X7Rdpt5"
 
-file_path = (
-    BASE_DIR
-    / "datasets"
-    / "processed_datasets"
-    / "clustered_data.csv"
-)
+url = f"https://drive.google.com/uc?id={file_id}"
 
-df = pd.read_csv(file_path)
+df = pd.read_csv(url)
 
 # ---------------- KPIs ---------------- #
 st.subheader("📊 Overall Insights")

@@ -10,16 +10,14 @@ st.title("📍 Crime Hotspot Explorer")
 
 # df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+import pandas as pd
 
-file_path = (
-    BASE_DIR
-    / "datasets"
-    / "processed_datasets"
-    / "clustered_data.csv"
-)
+file_id = "1IoNg9sw-00GeFoTLIfYBEipR_X7Rdpt5"
 
-df = pd.read_csv(file_path)
+url = f"https://drive.google.com/uc?id={file_id}"
+
+df = pd.read_csv(url)
+
 
 df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
 df["Hour"] = df["Date"].dt.hour

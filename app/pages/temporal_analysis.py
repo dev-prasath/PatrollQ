@@ -8,19 +8,13 @@ st.title("⏰ Temporal Crime Analysis")
 
 # df = pd.read_csv("../datasets/processed_datasets/clustered_data.csv")
 
-from pathlib import Path
+import pandas as pd
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent
+file_id = "1IoNg9sw-00GeFoTLIfYBEipR_X7Rdpt5"
 
-file_path = (
-    BASE_DIR
-    / "datasets"
-    / "processed_datasets"
-    / "clustered_data.csv"
-)
+url = f"https://drive.google.com/uc?id={file_id}"
 
-df = pd.read_csv(file_path)
-
+df = pd.read_csv(url)
 df["Date"] = pd.to_datetime(df["Date"], errors="coerce")
 df["Hour"] = df["Date"].dt.hour
 df["Day"] = df["Date"].dt.day_name()
